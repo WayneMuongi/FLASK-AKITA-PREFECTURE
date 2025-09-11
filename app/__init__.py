@@ -11,12 +11,8 @@ def create_app():
     #initialize db
     db.init_app(app)
     migrate.init_app(app,db)
-    
 
-    #REGISTER BLUEPRINT
-    app.register_blueprint(student_bp)
-
-
-
+    #register blueprint
+    app.register_blueprint(student_bp,url_prefix="/student")
 
     return app
